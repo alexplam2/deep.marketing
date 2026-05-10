@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Marketing — Digital pentru afaceri</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0C10;
+  --bg2:#1F2833;
+  --bg3:#16202b;
+  --text:#C5C6C7;
+  --white:#e8f8f7;
+  --accent:#66FCF1;
+  --a2:#45A29E;
+  --adim:rgba(102,252,241,.07);
+  --aborder:rgba(102,252,241,.17);
+  --border:rgba(102,252,241,.07);
+  --border2:rgba(197,198,199,.12);
+  --card:#13191f;
+  --muted:#6b7e7d;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Syne',sans-serif;color:var(--white);line-height:1.08}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 2.5rem;background:rgba(11,12,16,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--white)}
+.logo em{font-style:normal;color:var(--accent)}
+.nl{display:flex;gap:1.75rem;list-style:none}
+.nl a{font-size:.83rem;color:var(--muted);transition:color .2s}
+.nl a:hover{color:var(--accent)}
+.ncta{background:var(--accent);color:#0B0C10;padding:.48rem 1.35rem;border-radius:100px;font-size:.82rem;font-weight:700;font-family:'Syne',sans-serif;transition:all .18s}
+.ncta:hover{background:#8ffdf8;transform:scale(1.03)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 2.5rem 5rem;max-width:1200px;margin:0 auto;position:relative}
+.pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--adim);border:1px solid var(--aborder);border-radius:100px;padding:.33rem 1.1rem;font-size:.73rem;color:var(--accent);margin-bottom:2rem;width:fit-content;letter-spacing:.05em;text-transform:uppercase}
+.pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-size:clamp(2.8rem,6.5vw,5.6rem);font-weight:800;letter-spacing:-.035em;margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hsub{font-size:1.05rem;color:var(--muted);max-width:540px;margin-bottom:2.5rem;font-weight:300;line-height:1.8}
+.hsub b{color:var(--text);font-weight:400}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap}
+.ba{background:var(--accent);color:#0B0C10;padding:.85rem 2rem;border-radius:100px;font-size:.9rem;font-weight:700;font-family:'Syne',sans-serif;transition:all .18s;display:inline-flex;align-items:center;gap:.4rem}
+.ba:hover{background:#8ffdf8;transform:translateY(-2px)}
+.bb{border:1px solid var(--border2);color:var(--text);padding:.85rem 2rem;border-radius:100px;font-size:.9rem;transition:all .18s;display:inline-flex;align-items:center;gap:.4rem}
+.bb:hover{border-color:var(--a2);color:var(--accent)}
+.stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.sv{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent)}
+.sl{font-size:.75rem;color:var(--muted);margin-top:.2rem;line-height:1.4}
+.scrollh{position:absolute;bottom:2.5rem;right:2.5rem;font-size:.7rem;color:var(--muted);writing-mode:vertical-rl;display:flex;align-items:center;gap:.7rem}
+.scrollh::after{content:'';width:1px;height:50px;background:linear-gradient(to bottom,var(--muted),transparent)}
+
+.div{max-width:1200px;margin:0 auto;height:1px;background:var(--border)}
+.sec{padding:5.5rem 2.5rem;max-width:1200px;margin:0 auto}
+.stag{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+.stitle{font-size:clamp(1.85rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.025em;margin-bottom:.85rem}
+.stitle em{font-style:normal;color:var(--accent)}
+.ssub{color:var(--muted);font-size:.93rem;max-width:520px;line-height:1.75}
+
+.grid-base{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:1.5rem;overflow:hidden;margin-top:2.75rem}
+.gc{background:var(--card);padding:1.75rem 1.4rem;transition:background .2s}
+.gc:hover{background:var(--bg2)}
+.gico{font-size:1.5rem;margin-bottom:.9rem}
+.gname{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.35rem}
+.gdesc{font-size:.8rem;color:var(--muted);line-height:1.6}
+.av{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;color:#0B0C10;margin-bottom:1rem}
+.tr{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--a2);margin-bottom:.3rem}
+.tn{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.4rem}
+.td{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+.svcw{margin-top:3rem;display:flex;flex-direction:column;gap:1.2rem}
+.svc{border:1px solid var(--border);border-radius:1.2rem;overflow:hidden}
+.svch{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.75rem;background:var(--card);cursor:pointer;gap:1rem;transition:background .18s}
+.svch:hover{background:var(--bg2)}
+.svchl{display:flex;align-items:center;gap:1rem}
+.svcico{width:40px;height:40px;border-radius:10px;background:var(--adim);border:1px solid var(--aborder);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.svch h3{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:700;color:var(--white)}
+.svchint{font-size:.79rem;color:var(--muted);margin-top:.18rem}
+.tog{width:28px;height:28px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1rem;transition:all .2s;flex-shrink:0;background:transparent;cursor:pointer}
+.tog.open{background:var(--accent);color:#0B0C10;border-color:var(--accent);transform:rotate(45deg)}
+.svcb{display:none;padding:0 1.75rem 1.75rem}
+.svcb.open{display:block}
+.expl{background:var(--bg2);border-left:3px solid var(--a2);border-radius:0 .7rem .7rem 0;padding:1rem 1.25rem;font-size:.845rem;color:var(--muted);line-height:1.8;margin-top:1.5rem}
+.expl strong{color:var(--white);font-weight:500}
+.pkgg{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1rem;margin-top:1.5rem}
+.pkg{background:var(--bg2);border:1px solid var(--border2);border-radius:1rem;padding:1.4rem;position:relative;transition:border-color .2s}
+.pkg:hover{border-color:var(--a2)}
+.pkg.top{border-color:var(--accent)}
+.pbadge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0B0C10;font-family:'Syne',sans-serif;font-size:.64rem;font-weight:800;padding:.24rem .85rem;border-radius:0 0 8px 8px;white-space:nowrap;letter-spacing:.05em}
+.ptier{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.pname{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:.7rem}
+.pp{font-family:'Syne',sans-serif;font-size:2.1rem;font-weight:800;color:var(--accent)}
+.pper{font-size:.73rem;color:var(--muted)}
+.psub{font-size:.75rem;color:var(--muted);margin:.28rem 0 1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.f{display:flex;align-items:flex-start;gap:.5rem;font-size:.81rem;color:var(--muted);margin-bottom:.5rem;line-height:1.45}
+.f::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.f.no{opacity:.35}
+.f.no::before{content:'—';color:var(--muted)}
+.pnote{font-size:.75rem;color:var(--a2);background:rgba(69,162,158,.07);border:1px solid rgba(69,162,158,.15);border-radius:.6rem;padding:.7rem .95rem;margin-top:.9rem;line-height:1.55}
+.psp{border-color:rgba(102,252,241,.28)}
+.psp .ptier,.psp .pp{color:var(--accent)}
+
+.portg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border-radius:1.5rem;overflow:hidden;margin-top:2.75rem;border:1px solid var(--border)}
+.pi{background:var(--card);padding:1.65rem;transition:background .2s;position:relative;overflow:hidden}
+.pi:hover{background:var(--bg2)}
+.pinum{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;color:rgba(102,252,241,.04);position:absolute;top:.6rem;right:1.1rem;line-height:1}
+.picat{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--a2);margin-bottom:.4rem}
+.pibrand{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:var(--white);margin-bottom:.38rem}
+.pidesc{font-size:.81rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem}
+.ptag{display:inline-block;font-size:.67rem;padding:.17rem .6rem;border-radius:100px;background:rgba(197,198,199,.05);color:var(--muted);margin-right:.3rem;margin-bottom:.3rem}
+.plink{font-size:.78rem;color:var(--accent);display:inline-flex;align-items:center;gap:.28rem;margin-top:.5rem;transition:color .2s}
+.plink:hover{color:var(--a2)}
+.pstatus{display:inline-block;font-size:.66rem;padding:.2rem .68rem;border-radius:100px;background:rgba(102,252,241,.09);color:var(--accent);font-weight:600;border:1px solid var(--aborder)}
+
+.cwrap{border:1px solid var(--border);border-radius:1.75rem;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-top:2.5rem}
+.cl{padding:2.75rem;background:var(--card)}
+.cr{padding:2.75rem;background:var(--bg2);border-left:1px solid var(--border)}
+.ctitle{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;letter-spacing:-.025em;margin-bottom:.8rem;color:var(--white);line-height:1.1}
+.ctitle em{font-style:normal;color:var(--accent)}
+.csub{font-size:.855rem;color:var(--muted);line-height:1.75;margin-bottom:1.75rem}
+.crow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.15rem}
+.cico{width:36px;height:36px;border-radius:9px;background:var(--adim);border:1px solid var(--aborder);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.clbl{font-size:.7rem;color:var(--muted);margin-bottom:.08rem}
+.cval{font-size:.92rem;color:var(--white);font-weight:500}
+.cval a{color:var(--white);transition:color .2s}
+.cval a:hover{color:var(--accent)}
+.fg{margin-bottom:.9rem}
+.fg label{display:block;font-size:.75rem;color:var(--muted);margin-bottom:.38rem}
+.fg input,.fg textarea,.fg select{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--border2);border-radius:.65rem;padding:.76rem .92rem;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.875rem;outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--a2)}
+.fg textarea{resize:vertical;min-height:85px}
+.fg select option{background:#1F2833;color:var(--white)}
+.fsub{width:100%;background:var(--accent);color:#0B0C10;border:none;padding:.9rem;border-radius:.65rem;font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;cursor:pointer;transition:all .18s;margin-top:.2rem;letter-spacing:.03em}
+.fsub:hover{background:#8ffdf8;transform:translateY(-1px)}
+
+footer{padding:1.75rem 2.5rem;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;flex-wrap:wrap;gap:1rem}
+.fl{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:var(--white)}
+.fl em{font-style:normal;color:var(--accent)}
+.fc{font-size:.75rem;color:var(--muted)}
+
+.fade{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.fade.in{opacity:1;transform:none}
+
+@media(max-width:768px){
+  nav .nl{display:none}
+  .hero h1{font-size:2.5rem}
+  .cwrap{grid-template-columns:1fr}
+  .cr{border-left:none;border-top:1px solid var(--border)}
+  .scrollh{display:none}
+  .sec,.hero{padding-left:1.25rem;padding-right:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Deep<em>.</em>Marketing</div>
+  <ul class="nl">
+    <li><a href="#who">Clienți</a></li>
+    <li><a href="#team">Echipă</a></li>
+    <li><a href="#services">Servicii</a></li>
+    <li><a href="#portfolio">Portofoliu</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="ncta">Discutăm</a>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto">
+<section class="hero">
+  <div class="pill">Digital Marketing · Chișinău · CSI</div>
+  <h1>Digital care<br>lucrează <em>pentru tine.</em></h1>
+  <p class="hsub">Landing-uri, email & SMS, SMM și reclame targetate — pentru <b>afaceri, evenimente, branduri și startup-uri.</b> Rapid, clar, cu rezultate măsurabile.</p>
+  <div class="hbtns">
+    <a href="#services" class="ba">Vezi serviciile →</a>
+    <a href="#portfolio" class="bb">Portofoliu</a>
+  </div>
+  <div class="stats">
+    <div><div class="sv">9+</div><div class="sl">Branduri în<br>portofoliu</div></div>
+    <div><div class="sv">300+</div><div class="sl">Participanți la<br>evenimente</div></div>
+    <div><div class="sv">4</div><div class="sl">Direcții<br>digital</div></div>
+    <div><div class="sv">5 zile</div><div class="sl">Până la prima<br>campanie lansată</div></div>
+  </div>
+  <div class="scrollh">Scroll</div>
+</section>
+</div>
+
+<div class="div"></div>
+
+<!-- WHO -->
+<section class="sec fade" id="who">
+  <div class="stag">Cui ne adresăm</div>
+  <h2 class="stitle">Lucrăm cu <em>orice</em> business</h2>
+  <p class="ssub">Nu contează dacă organizezi conferințe, vinzi produse sau îți construiești brandul personal — instrumentele noastre funcționează pentru toți.</p>
+  <div class="grid-base" style="grid-template-columns:repeat(auto-fit,minmax(185px,1fr))">
+    <div class="gc"><div class="gico">🎤</div><div class="gname">Organizatori de evenimente</div><div class="gdesc">Conferințe, forumuri, networking-uri — atragem participanți și construim comunicarea cu ei.</div></div>
+    <div class="gc"><div class="gico">🏪</div><div class="gname">Afaceri mici și mijlocii</div><div class="gdesc">Restaurante, magazine, saloane, clinici — clienți online și retenție prin campanii de email.</div></div>
+    <div class="gc"><div class="gico">🚀</div><div class="gname">Startup-uri și produse</div><div class="gdesc">Landing pentru lansare, email drip-campaign și SMM care transformă vizitatorii în clienți.</div></div>
+    <div class="gc"><div class="gico">🛍️</div><div class="gname">E-commerce</div><div class="gdesc">Reclame targetate, email-uri post-cumpărare și rețele sociale care cresc vânzările repetate.</div></div>
+    <div class="gc"><div class="gico">👤</div><div class="gname">Brand personal</div><div class="gdesc">Experți, antreprenori, coaches — prezență digitală care aduce autoritate și clienți noi.</div></div>
+    <div class="gc"><div class="gico">🏢</div><div class="gname">Companii</div><div class="gdesc">Comunicare externă, pagini de prezentare, campanii de recrutare și employer branding.</div></div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- TEAM -->
+<section class="sec fade" id="team">
+  <div class="stag">Cine suntem</div>
+  <h2 class="stitle">Echipa de <em>experți</em></h2>
+  <p class="ssub">Fiecare specialist este responsabil de domeniul său — primești profunzime, nu o abordare superficială „totul și nimic".</p>
+  <div class="grid-base" style="grid-template-columns:repeat(auto-fit,minmax(185px,1fr))">
+    <div class="gc">
+      <div class="av" style="background:linear-gradient(135deg,#66FCF1,#45A29E)">AM</div>
+      <div class="tr">Manager proiect</div><div class="tn">Alexandru</div>
+      <div class="td">Strateg digital și coordonator. Răspunde de rezultat și comunică cu clientul la fiecare etapă.</div>
+    </div>
+    <div class="gc">
+      <div class="av" style="background:linear-gradient(135deg,#60a5fa,#a78bfa)">DM</div>
+      <div class="tr">Digital Marketing</div><div class="tn">Expert strategie</div>
+      <div class="td">Elaborează strategia de promovare și selectează canalele potrivite pentru fiecare audiență.</div>
+    </div>
+    <div class="gc">
+      <div class="av" style="background:linear-gradient(135deg,#f472b6,#fb923c)">AI</div>
+      <div class="tr">Specialist AI</div><div class="tn">Expert neurețele</div>
+      <div class="td">Automatizează procesele cu AI: texte, personalizare și producție de conținut de 5× mai rapid.</div>
+    </div>
+    <div class="gc">
+      <div class="av" style="background:linear-gradient(135deg,#34d399,#06b6d4)">ES</div>
+      <div class="tr">Email & SMS</div><div class="tn">Specialist campanii</div>
+      <div class="td">Configurează livrarea tehnică și scrie serii de mesaje care ajung în inbox, nu în spam.</div>
+    </div>
+    <div class="gc">
+      <div class="av" style="background:linear-gradient(135deg,#fbbf24,#f97316)">LD</div>
+      <div class="tr">Landing & Web</div><div class="tn">Specialist landing-uri</div>
+      <div class="td">Creează pagini web rapide și care convertesc — cu formulare și timer countdown.</div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- SERVICES -->
+<section class="sec fade" id="services">
+  <div class="stag">Ce facem</div>
+  <h2 class="stitle">Serviciile <em>noastre</em></h2>
+  <p class="ssub">Apasă pe orice serviciu pentru a vedea pachetele — explicăm simplu, ca să fie clar chiar și fără experiență în digital.</p>
+  <div class="svcw">
+
+    <div class="svc">
+      <div class="svch" onclick="tog(this)">
+        <div class="svchl"><div class="svcico">✉️</div><div><h3>Email + SMS Marketing</h3><div class="svchint">Mesajul potrivit, la momentul potrivit — publicul tău va răspunde</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="svcb">
+        <div class="expl"><strong>Pe înțelesul tuturor:</strong> Scriem o serie de emailuri și SMS-uri care se trimit automat — înainte de eveniment sau campanie, cu o zi înainte și în ziua în cauză. Clientul primește un email cu detaliile, un reminder, apoi un SMS dimineața — și cu siguranță nu uită. <strong>Nu trebuie să faci nimic manual</strong> — configurăm totul o singură dată.</div>
+        <div class="pkgg">
+          <div class="pkg">
+            <div class="ptier">Economic</div><div class="pname">Start</div>
+            <div class="pp">$99 <span class="pper">/ o dată</span></div>
+            <div class="psub">Până la 500 contacte</div>
+            <div class="f">3 emailuri: anunț, reminder cu 3 zile înainte, email în ziua evenimentului</div>
+            <div class="f">1 SMS în dimineața evenimentului cu adresa și ora</div>
+            <div class="f">Configurare tehnică — emailurile ajung în Inbox, nu în Spam</div>
+            <div class="f">Încărcarea bazei de contacte din Excel</div>
+            <div class="f no">Personalizare cu numele destinatarului</div>
+            <div class="f no">Raport cu statistici de deschidere</div>
+            <div class="pnote">💡 Ideal pentru prima experiență cu email marketing sau campanii până la 500 persoane.</div>
+          </div>
+          <div class="pkg top">
+            <div class="pbadge">RECOMANDAT</div>
+            <div class="ptier">Standard</div><div class="pname">Standard</div>
+            <div class="pp">$179 <span class="pper">/ o dată</span></div>
+            <div class="psub">Până la 1.000 contacte</div>
+            <div class="f">5 emailuri: anunț → speakeri → reminder → ziua evenimentului → mulțumiri</div>
+            <div class="f">2 SMS-uri: cu 5 zile înainte + în dimineața evenimentului</div>
+            <div class="f">Personalizare — fiecare primește emailul cu numele său</div>
+            <div class="f">Expeditor nominal SMS (ex. „TechForum" în loc de număr)</div>
+            <div class="f">Raport: câți au deschis, câți au dat click, câți au citit</div>
+            <div class="f">Configurare completă domeniu SPF/DKIM — livrabilitate maximă</div>
+            <div class="pnote">💡 Alegerea optimă pentru conferințe și campanii. Serie completă de comunicare de la anunț până la emailul final.</div>
+          </div>
+        </div>
+        <div class="expl" style="margin-top:1rem"><strong>Costul SMS</strong> (~$25–50 pentru 500 numere) este costul platformei, facturat separat. Informăm mereu în avans.</div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="svch" onclick="tog(this)">
+        <div class="svchl"><div class="svcico">🌐</div><div><h3>Landing Page + Campanie Email</h3><div class="svchint">Site-ul proiectului tău + comunicare completă — totul într-un singur loc</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="svcb">
+        <div class="expl"><strong>Pe înțelesul tuturor:</strong> Un landing page este un site de o singură pagină unde vizitatorii văd oferta ta și se înregistrează. Îl creăm în 2–3 zile, conectăm formularul și configurăm campania de email. S-a înregistrat cineva — primește email de confirmare. Cu o zi înainte — primește reminder. Totul automat. <strong>Nu ai nevoie de site propriu sau cunoștințe tehnice.</strong></div>
+        <div class="pkgg">
+          <div class="pkg">
+            <div class="ptier">Economic</div><div class="pname">Launch</div>
+            <div class="pp">$249 <span class="pper">/ o dată</span></div>
+            <div class="psub">Până la 500 contacte · site 30 zile</div>
+            <div class="f">Landing page — 1 pagină cu program/ofertă și formular de înregistrare</div>
+            <div class="f">Versiune mobilă — arată perfect pe telefon</div>
+            <div class="f">3 emailuri: anunț, reminder, email în ziua evenimentului</div>
+            <div class="f">1 SMS în dimineața evenimentului</div>
+            <div class="f">Conectare domeniu propriu sau ajutor la achiziție</div>
+            <div class="f no">Timer countdown pe site</div>
+            <div class="f no">Carduri speakeri cu poze</div>
+            <div class="pnote">💡 Start rapid — site și comunicare de bază, fără complicații. Soluție bună pentru primul eveniment sau lansare.</div>
+          </div>
+          <div class="pkg top">
+            <div class="pbadge">RECOMANDAT</div>
+            <div class="ptier">Standard</div><div class="pname">Growth</div>
+            <div class="pp">$399 <span class="pper">/ o dată</span></div>
+            <div class="psub">Până la 1.000 contacte · site 60 zile</div>
+            <div class="f">Landing page complet cu program, speakeri și timer countdown</div>
+            <div class="f">Carduri speakeri cu poze și descrierea temei</div>
+            <div class="f">5 emailuri: serie completă de la anunț la mulțumiri</div>
+            <div class="f">2 SMS-uri: cu 5 zile + în dimineața evenimentului</div>
+            <div class="f">Personalizare — emailuri cu numele fiecărui participant</div>
+            <div class="f">Raport: statistici site + rata de deschidere emailuri</div>
+            <div class="pnote">💡 Pachet complet. Un singur contractor acoperă site-ul și toate comunicările — comod și economiești timp prețios.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="svch" onclick="tog(this)">
+        <div class="svchl"><div class="svcico">📱</div><div><h3>SMM — Social Media Management</h3><div class="svchint">Instagram și TikTok care atrag clienți și construiesc comunitate reală</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="svcb">
+        <div class="expl"><strong>Pe înțelesul tuturor:</strong> Gestionăm Instagram și/sau TikTok-ul tău: scriem postări, facem stories, răspundem la întrebările urmăritorilor. Oamenii văd anunțuri, culise, testimoniale — și vor să facă parte din ce faci tu. <strong>Conținutul este creat cu ajutorul AI</strong> — rapid, calitativ și fără runde lungi de aprobare.</div>
+        <div class="pkgg">
+          <div class="pkg">
+            <div class="ptier">Economic</div><div class="pname">SMM Start</div>
+            <div class="pp">$199 <span class="pper">/ lună</span></div>
+            <div class="psub">1 platformă (Instagram sau TikTok)</div>
+            <div class="f">12 postări/lună — anunțuri, oferte, conținut util pentru audiență</div>
+            <div class="f">20 stories/lună — sondaje, countdown, Q&amp;A, behind the scenes</div>
+            <div class="f">Texte create cu AI — rapid și fără „apă"</div>
+            <div class="f">1 revizuire per postare inclusă</div>
+            <div class="f no">Reels și conținut video cu montaj</div>
+            <div class="f no">Analiză și raport lunar</div>
+            <div class="pnote">💡 Prezență de bază în social media — funcționează deja pentru atragerea clienților și creșterea notorietății.</div>
+          </div>
+          <div class="pkg top">
+            <div class="pbadge">RECOMANDAT</div>
+            <div class="ptier">Standard</div><div class="pname">SMM Standard</div>
+            <div class="pp">$349 <span class="pper">/ lună</span></div>
+            <div class="psub">2 platforme (Instagram + TikTok)</div>
+            <div class="f">20 postări/lună pe ambele platforme</div>
+            <div class="f">40 stories — încălzire audiență, culise, produse, countdown</div>
+            <div class="f">4 reels/video pe lună cu montaj profesional</div>
+            <div class="f">Răspunsuri la comentarii și DM-uri</div>
+            <div class="f">Raport lunar: reach, engagement, creștere audiență</div>
+            <div class="pnote">💡 Prezență SMM completă care construiește audiența constant, nu doar cu o săptămână înainte de eveniment sau lansare.</div>
+          </div>
+          <div class="pkg psp">
+            <div class="ptier">Exclusiv</div><div class="pname">Event Stories Live 🔥</div>
+            <div class="pp">$499 <span class="pper">/ eveniment</span></div>
+            <div class="psub">Conținut live în ziua evenimentului</div>
+            <div class="f">Specialist prezent la eveniment toată ziua</div>
+            <div class="f">Stories live la fiecare 30 min — sală, speakeri, culise, emoții reale</div>
+            <div class="f">Reel „Highlight al zilei" — montat și publicat în aceeași seară</div>
+            <div class="f">Video vertical TikTok + orizontal pentru YouTube</div>
+            <div class="f">Interviuri rapide cu speakerii — 30–60 sec, maximum valoare</div>
+            <div class="f">Stories cu sondaj „Ce ai reținut?" — implicăm audiența după eveniment</div>
+            <div class="pnote" style="color:var(--accent);background:rgba(102,252,241,.06);border-color:rgba(102,252,241,.14)">🔥 Evenimentul tău trăiește în stories în timp real. Cei care nu au venit vor vrea să fie la următorul.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="svch" onclick="tog(this)">
+        <div class="svchl"><div class="svcico">🎯</div><div><h3>Reclame Targetate (Meta Ads)</h3><div class="svchint">Reclame pe Instagram și Facebook care ajung exact la publicul tău ideal</div></div></div>
+        <div class="tog">+</div>
+      </div>
+      <div class="svcb">
+        <div class="expl"><strong>Pe înțelesul tuturor:</strong> Targetarea înseamnă că reclama ta nu apare la toată lumea, ci exact celor potriviți: după oraș, vârstă, interese, profesie. De exemplu, doar directorilor din Chișinău interesați de business și tehnologie. <strong>Plătești doar pentru afișări reale</strong> în fața publicului potrivit. Configurăm campania, monitorizăm și optimizăm zilnic.</div>
+        <div class="pkgg">
+          <div class="pkg">
+            <div class="ptier">Economic</div><div class="pname">Target Start</div>
+            <div class="pp">$149 <span class="pper">/ configurare</span></div>
+            <div class="psub">+ buget publicitar de la $100</div>
+            <div class="f">Configurarea 1 campanii în Meta (Instagram + Facebook)</div>
+            <div class="f">Definirea audienței țintă după oraș, vârstă și interese</div>
+            <div class="f">2 anunțuri publicitare (text + imagine)</div>
+            <div class="f">Lansare și monitorizare de bază timp de 2 săptămâni</div>
+            <div class="f no">Test A/B cu audiențe diferite</div>
+            <div class="f no">Optimizare zilnică a bugetului</div>
+            <div class="pnote">💡 Ideal pentru un start rapid cu buget minim și obiective clare de creștere a înregistrărilor sau vânzărilor.</div>
+          </div>
+          <div class="pkg top">
+            <div class="pbadge">RECOMANDAT</div>
+            <div class="ptier">Standard</div><div class="pname">Target Pro</div>
+            <div class="pp">$279 <span class="pper">/ campanie</span></div>
+            <div class="psub">+ buget publicitar de la $200</div>
+            <div class="f">3–5 anunțuri cu formate diferite (foto, video, carusel)</div>
+            <div class="f">Test A/B cu 2–3 audiențe — găsim cine răspunde cel mai bine</div>
+            <div class="f">Optimizare zilnică — bugetul merge unde sunt cele mai bune rezultate</div>
+            <div class="f">Retargeting — urmărim cei care au vizitat site-ul dar nu au convertit</div>
+            <div class="f">Raport săptămânal: afișări, click-uri, conversii și cost per acțiune</div>
+            <div class="pnote">💡 Pentru campanii serioase unde contează ROI-ul — maximum conversii cu buget optimizat zilnic.</div>
+          </div>
+        </div>
+        <div class="expl" style="margin-top:1rem"><strong>Bugetul publicitar</strong> — sumele care merg direct la Facebook/Instagram pentru afișări — se plătesc separat. Explicăm mereu suma necesară pentru obiectivul concret.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- PORTFOLIO -->
+<section class="sec fade" id="portfolio">
+  <div class="stag">Proiectele noastre</div>
+  <h2 class="stitle">Portofoliu</h2>
+  <p class="ssub">Lucrăm cu branduri din diverse nișe — de la startup-uri la companii consacrate pe piața moldovenească.</p>
+  <div class="portg">
+
+    <div class="pi">
+      <div class="pinum">01</div>
+      <div class="picat">Mobilitate urbană</div>
+      <div class="pibrand">Bolt Moldova</div>
+      <div class="pidesc">SMM și producție video pentru cel mai mare brand de mobilitate urbană. Conținut consistent care consolidează prezența digitală și crește reach-ul organic.</div>
+      <div><span class="ptag">SMM</span><span class="ptag">Video</span><span class="ptag">TikTok</span></div>
+      <a href="https://www.tiktok.com/@bolt.moldova" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">02</div>
+      <div class="picat">Fashion · Creat integral de noi</div>
+      <div class="pibrand">FLIRT</div>
+      <div class="pidesc">Brand de îmbrăcăminte construit complet de echipa noastră — de la zero: strategie, identitate vizuală, conținut, marketing și comunitate. Gestionat activ în continuare de noi.</div>
+      <div><span class="ptag">Brand complet</span><span class="ptag">SMM</span><span class="ptag">Strategie</span></div>
+      <div style="margin-top:.55rem"><span class="pstatus">Activ — gestionat de noi</span></div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.55rem">
+        <a href="https://www.tiktok.com/@flirt.md" target="_blank" class="plink">TikTok →</a>
+        <a href="https://www.instagram.com/flirt.md" target="_blank" class="plink">Instagram →</a>
+      </div>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">03</div>
+      <div class="picat">Spirits & Lifestyle</div>
+      <div class="pibrand">Zernoff Vodka</div>
+      <div class="pidesc">Reel cinematic pentru un brand premium — estetică vizuală combinată cu storytelling puternic. Conținut cu accent pe identitate vizuală distinctă.</div>
+      <div><span class="ptag">Video</span><span class="ptag">Instagram</span><span class="ptag">Premium</span></div>
+      <a href="https://www.instagram.com/reel/DVl0HkEjfEs/" target="_blank" class="plink">Vezi reelul →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">04</div>
+      <div class="picat">Sport</div>
+      <div class="pibrand">Joma Moldova</div>
+      <div class="pidesc">Videoclipuri de entertainment și vânzări. Dinamică sportivă + prezentare produs — echilibru între conținut organic și conversii directe.</div>
+      <div><span class="ptag">Video</span><span class="ptag">TikTok</span><span class="ptag">Sport</span></div>
+      <a href="https://www.tiktok.com/@jomasport.md" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">05</div>
+      <div class="picat">Sport</div>
+      <div class="pibrand">CSF Sporting</div>
+      <div class="pidesc">Consolidarea poziționării digitale a brandului printr-o serie de videoclipuri dinamice care reflectă spiritul și valorile clubului.</div>
+      <div><span class="ptag">Video</span><span class="ptag">TikTok</span><span class="ptag">Sport</span></div>
+      <a href="https://www.tiktok.com/@csfsporting" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">06</div>
+      <div class="picat">HoReCa</div>
+      <div class="pibrand">UFO Burger</div>
+      <div class="pidesc">Proiect la cheie: lansarea conturilor, sistem vizual coerent și creșterea indicatorilor cheie în primele luni de activitate.</div>
+      <div><span class="ptag">SMM</span><span class="ptag">Lansare</span><span class="ptag">Video</span></div>
+      <a href="https://www.tiktok.com/@ufoburgermd" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">07</div>
+      <div class="picat">Fashion / Sport</div>
+      <div class="pibrand">Sport Outlet</div>
+      <div class="pidesc">Direcție fashion și strategie de videoclipuri scurte cu accent pe valoarea produsului în primele secunde de vizionare.</div>
+      <div><span class="ptag">Reels</span><span class="ptag">Fashion</span><span class="ptag">TikTok</span></div>
+      <a href="https://www.tiktok.com/@sportoutlet.md" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">08</div>
+      <div class="picat">Personal Brand</div>
+      <div class="pibrand">Adam Dornia</div>
+      <div class="pidesc">Colaborare cu influencer — strategie de conținut și creștere organică a audienței pe TikTok.</div>
+      <div><span class="ptag">Influencer</span><span class="ptag">Strategie</span><span class="ptag">TikTok</span></div>
+      <a href="https://www.tiktok.com/@adam.dornia" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+    <div class="pi">
+      <div class="pinum">09</div>
+      <div class="picat">Beauty</div>
+      <div class="pibrand">Beauty Studio Lika</div>
+      <div class="pidesc">Comunicare vizuală adaptată publicului țintă, consolidând stilul emoțional și distinctiv al brandului de beauty.</div>
+      <div><span class="ptag">SMM</span><span class="ptag">Beauty</span><span class="ptag">Instagram</span></div>
+      <a href="https://www.tiktok.com/@beautystudiolikaa" target="_blank" class="plink">TikTok →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CONTACT -->
+<section class="sec fade" id="contact">
+  <div class="stag">Contact</div>
+  <h2 class="stitle">Să construim ceva <em>real.</em></h2>
+  <div class="cwrap">
+    <div class="cl">
+      <div class="ctitle">Suntem gata<br>să <em>începem</em></div>
+      <p class="csub">Povestește-ne despre proiectul tău — te contactăm în câteva ore și îți propunem pachetul optim pentru obiectivele tale.</p>
+      <div class="crow"><div class="cico">👤</div><div><div class="clbl">Responsabil</div><div class="cval">Alexandru</div></div></div>
+      <div class="crow"><div class="cico">📞</div><div><div class="clbl">Telefon</div><div class="cval"><a href="tel:068990037">068 990 037</a></div></div></div>
+      <div class="crow"><div class="cico">✉️</div><div><div class="clbl">Email</div><div class="cval"><a href="mailto:deep.team2025@gmail.com">deep.team2025@gmail.com</a></div></div></div>
+      <div style="margin-top:1.75rem;padding-top:1.75rem;border-top:1px solid var(--border)">
+        <p style="font-size:.77rem;color:var(--muted);margin-bottom:.9rem">Sau scrie-ne direct:</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <a href="https://wa.me/373068990037" target="_blank" class="ba" style="font-size:.82rem;padding:.6rem 1.2rem">WhatsApp →</a>
+          <a href="https://t.me/+373068990037" target="_blank" class="bb" style="font-size:.82rem;padding:.6rem 1.2rem">Telegram →</a>
+        </div>
+      </div>
+    </div>
+    <div class="cr">
+      <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:1.35rem">Lasă o cerere</p>
+      <form onsubmit="send(event)">
+        <div class="fg"><label>Numele tău</label><input type="text" placeholder="Ion Popescu" required></div>
+        <div class="fg"><label>Telefon sau email</label><input type="text" placeholder="+373 XXX XXX XX" required></div>
+        <div class="fg"><label>Tipul proiectului</label>
+          <select>
+            <option>Eveniment / conferință</option>
+            <option>Afacere mică sau mijlocie</option>
+            <option>Startup sau produs</option>
+            <option>E-commerce / magazin online</option>
+            <option>Brand personal</option>
+            <option>Companie / corporație</option>
+            <option>Altele</option>
+          </select>
+        </div>
+        <div class="fg"><label>Serviciul dorit</label>
+          <select>
+            <option>Email + SMS Marketing</option>
+            <option>Landing Page + Campanie Email</option>
+            <option>SMM — Social Media</option>
+            <option>Reclame Targetate (Meta Ads)</option>
+            <option>Pachet complet</option>
+          </select>
+        </div>
+        <div class="fg"><label>Spune-ne mai multe (opțional)</label><textarea placeholder="Dată, oraș, audiență, obiectiv..."></textarea></div>
+        <button type="submit" class="fsub">Trimite cererea →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+<footer>
+  <div class="fl">Deep<em>.</em>Marketing</div>
+  <div class="fc">© 2025 Deep Marketing · SMM · Email & SMS · Landing · Target</div>
+</footer>
+
+<script>
+function tog(h){
+  const b=h.nextElementSibling,t=h.querySelector('.tog'),open=b.classList.contains('open');
+  document.querySelectorAll('.svcb.open').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.tog.open').forEach(x=>x.classList.remove('open'));
+  if(!open){b.classList.add('open');t.classList.add('open')}
+}
+function send(e){
+  e.preventDefault();
+  const b=e.target.querySelector('.fsub');
+  b.textContent='✓ Cerere trimisă!';
+  b.style.background='#45A29E';
+  b.disabled=true;
+}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
